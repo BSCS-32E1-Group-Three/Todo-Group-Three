@@ -58,7 +58,7 @@ namespace Todolist.Repositories
 
         public ToDo Update(ToDo toDo)
         {
-            throw new NotImplementedException();
+            return toDo;
         }
     }
 }
