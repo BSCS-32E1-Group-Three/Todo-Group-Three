@@ -39,7 +39,16 @@ namespace Todolist.Repositories
 
         public Task<ToDo> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+  
+            var todo = todoList.FirstOrDefault(t => t.Id == id);
+
+            if (todo == null)
+            {
+                throw new KeyNotFoundException($"Todo with ID {id} not found.");
+            }
+
+        
+            return Task.FromResult(todo);
         }
 
         public bool Remove(int id)
